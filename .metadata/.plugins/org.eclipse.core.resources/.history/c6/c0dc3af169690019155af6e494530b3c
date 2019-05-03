@@ -1,0 +1,101 @@
+package testcase;
+
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import junit.framework.Assert;
+
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.hs.gofmpro.base.TestBase;
+import com.hs.gofmpro.pages.CreateCompany;
+import com.hs.gofmpro.pages.CreateUser;
+import com.hs.gofmpro.pages.Login;
+import com.hs.gofmpro.utils.TestUtil;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+
+public class TestCreateCompany extends TestBase{
+		Login login;
+		CreateCompany createCompany;
+		CreateUser createUser;
+		ExtentReports extent;
+		ExtentTest  logger;
+
+public TestCreateCompany(){
+		super();	
+		}
+@BeforeMethod
+public void setUp() throws InterruptedException{
+		initialization();
+		login = new Login();
+		createCompany = new CreateCompany();
+		createUser = new CreateUser();
+		//extent = new ExtentReports(System.getProperty("user.dir")+"/ErrorScreenshot/)
+		extent = new ExtentReports("/home/zentere/workspace/gofmpro/ErrorScreenshot/ExtentReport.html");
+
+		}
+
+@Test
+public void loginTest() throws InterruptedException, IOException{
+		logger = extent.startTest("login");
+//Test1
+		createCompany = login.login(prop.getProperty("Email"), prop.getProperty("Password"));
+		logger.log(LogStatus.PASS, "Login Page Pass");
+		String screenshotpath = TestUtil.captureScreenshot(driver,"login");
+		logger.log(LogStatus.PASS, logger.addScreenCapture(screenshotpath));
+		logger.log(LogStatus.INFO, "successfully Login ");
+		
+//Test2
+		logger = extent.startTest("CreateCompany");
+		logger.log(LogStatus.FAIL, "Failed to create company");
+		createUser =createCompany.CreateCompany(prop.getProperty("CompanyName"),prop.getProperty("Code"));
+		}
+	
+@AfterMethod
+		public void tearDown(ITestResult result) throws IOException{
+		if(result.getStatus()== ITestResult.FAILURE)	
+		{
+		String screenshotpath = TestUtil.captureScreenshot(driver,"CreateCompany");
+		//logger.log(LogStatus.FAIL, result.getName());
+		logger.log(LogStatus.FAIL, result.getThrowable());
+		//String screenshotpath = TestUtil.captureScreenshot(driver, result.getName());
+		logger.log(LogStatus.FAIL, logger.addScreenCapture(screenshotpath));
+		logger.log(LogStatus.INFO, "Same company code entered");
+
+			
+		}
+		//extent.endTest(logger);
+		extent.flush();
+
+
+		/*else if(result.getStatus()== ITestResult.SUCCESS)
+		{
+		String screenshotpath = TestUtil.captureScreenshot(driver,"CreateCompany");
+
+		logger.log(LogStatus.PASS, result.getName());
+		logger.log(LogStatus.PASS, result.getThrowable());
+		//String screenshotpath = TestUtil.captureScreenshot(driver, result.getName());
+		logger.log(LogStatus.PASS, logger.addScreenCapture(screenshotpath));
+		*/
+			
+		/*String screenshotpath = TestUtil.capture(driver,"screenshotName");
+		test.pass(MarkupHelper.createLabel(result.getName()+"Test Case Pass", ExtentColor.BLUE));
+		test.pass(result.getThrowable());
+		test.pass("Snapshot below:"+test.addScreenCaptureFromPath(screenshotpath));*/	
+		//}
+		
+		}
+@AfterTest
+		public void endTest() {
+		extent.close();
+		driver.close();
+
+		}}

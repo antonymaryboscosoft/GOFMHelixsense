@@ -1,0 +1,35 @@
+package com.hs.gofmpro.pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import com.hs.gofmpro.base.TestBase;
+
+public class CreateSapceCategory extends TestBase {
+
+	/* GOFT12 == As an Admin user I would like to create the Space Category to define the 
+	Structure of the facility so I can associate the equipment and maintenance.*/
+			
+	//Space Category
+			@FindBy(xpath="//span[@class='icon']")
+			WebElement Iconclick;
+			
+			@FindBy(xpath="//div[@id='o_menu_apps']//a[5]")
+			WebElement Facility;
+			
+			@FindBy(xpath="//i[@class='fa fa-plus']")
+			WebElement ClickPlus;
+			
+			@FindBy(xpath="//span[contains(text(),'Space Category')]")
+			WebElement ClickSpaceCat;
+			
+			@FindBy(xpath="//button[contains(text(),'Create')]")
+			WebElement ClickCreate;
+			
+			@FindBy(xpath="//input[@name='name']")
+			WebElement 
+			
+			
+			
+			
+}

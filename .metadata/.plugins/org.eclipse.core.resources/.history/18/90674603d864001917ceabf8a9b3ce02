@@ -1,0 +1,14 @@
+url = https://ifmpdemo.zentere.com/web/login
+Email = admin
+Password = Welcome#1
+browser = chrome
+==================
+GOFT26 == CreateCompany
+CompanyName = TCS CMP
+Code = 456
+=================
+GOFT27 == CreateUser
+EnterName = Antonymary
+EnterEmail = antonymaryboscosoft@gmail.com
+===============
+EnterSName = Test

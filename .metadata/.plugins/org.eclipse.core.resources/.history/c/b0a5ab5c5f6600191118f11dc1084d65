@@ -1,0 +1,22 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="GOFMPRO  Application Test Automation Test Suite">
+<test name = "GOFMPRO App Test Cases">
+
+	<listeners>
+		<listener class-name="com.qa.ExtentReportListener.ExtentReporterNG" />
+	</listeners>
+
+
+	<test name="Free CRM App Test Cases">
+		<classes>
+			<class name="com.hs.gofmpro.testcase.TestLogin"></class>
+			<class name="com.hs.gofmpro.testcase.TestCreateUser"></class>
+			<class name="com.hs.gofmpro.testcase.TestCreateCompany"></class>
+			<class name="com.hs.gofmpro.testcase.TestCreateSpaceCategory"></class>
+			<class name="com.hs.gofmpro.testcase.TestCreateEquipmentCategory"></class>
+		</classes>
+		</test>
+	</test>
+</suite>

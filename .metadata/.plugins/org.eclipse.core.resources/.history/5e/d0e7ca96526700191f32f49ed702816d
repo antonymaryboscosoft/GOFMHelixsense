@@ -1,0 +1,8 @@
+package com.hs.gofmpro.testcase;
+
+import com.hs.gofmpro.base.TestBase;
+
+public class TestCreateSpace extends TestBase {
+	
+
+}

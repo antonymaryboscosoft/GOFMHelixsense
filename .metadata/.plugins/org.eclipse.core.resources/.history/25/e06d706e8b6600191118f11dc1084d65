@@ -1,0 +1,59 @@
+package com.hs.gofmpro.testcase;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import com.hs.gofmpro.base.TestBase;
+import com.hs.gofmpro.pages.CreateEquipmentCategory;
+import com.hs.gofmpro.pages.CreateSpace;
+import com.hs.gofmpro.pages.CreateSpaceCategory;
+import com.hs.gofmpro.pages.Login;
+import com.hs.gofmpro.utils.TestUtil;
+
+public class TestCreateSpaceCategory extends TestBase{
+		Login login;
+		CreateSpaceCategory createSpaceCategory;
+		CreateEquipmentCategory createEquipmentCategory;	
+		CreateSpace createSpace;
+		XSSFWorkbook wb;
+		XSSFSheet sheet;
+		FileInputStream fis;
+		
+
+public TestCreateSpaceCategory(){
+		super();
+		}
+	
+@BeforeMethod
+public void setUp() throws InterruptedException, IOException{
+		initialization();
+		login = new Login();
+		createSpaceCategory = new CreateSpaceCategory();
+		createEquipmentCategory = new CreateEquipmentCategory();
+		
+		
+		File src = new File ("/home/zentere/workspace/IFMP/src/test/java/com/hs/gofmpro/utils/Gofmpro.xlsx");
+		fis = new FileInputStream(src);	
+		wb = new XSSFWorkbook(fis);
+		sheet = wb.getSheetAt(0);
+		}
+@Test(priority=1)
+public void loginTest(String EnterSNa) throws InterruptedException{
+//Test1
+		createSpaceCategory = login.login(prop.getProperty("Email"), prop.getProperty("Password"));	
+	
+		
+		createEquipmentCategory = createSpaceCategory.createSpaceCat("EnterSNa");
+
+		}
+		
+}

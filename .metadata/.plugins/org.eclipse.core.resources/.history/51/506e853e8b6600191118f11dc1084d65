@@ -1,0 +1,45 @@
+package com.hs.gofmpro.testcase;
+
+import java.io.IOException;
+
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import com.hs.gofmpro.base.TestBase;
+import com.hs.gofmpro.pages.CreateEquipmentCategory;
+import com.hs.gofmpro.pages.CreateSpaceCategory;
+import com.hs.gofmpro.pages.Login;
+import com.hs.gofmpro.utils.TestUtil;
+
+public class TestCreateSpaceCategory extends TestBase{
+		Login login;
+		CreateSpaceCategory createSpaceCategory;
+		CreateEquipmentCategory createEquipmentCategory;	
+		
+		
+		String sheetName ="GofmInput";
+
+public TestCreateSpaceCategory(){
+		super();
+		}
+	
+@BeforeMethod
+public void setUp() throws InterruptedException{
+		initialization();
+		login = new Login();
+		createSpaceCategory = new CreateSpaceCategory();
+		createEquipmentCategory = new CreateEquipmentCategory();
+		
+		}
+@Test(priority=1)
+public void loginTest() throws InterruptedException{
+//Test1
+		createSpaceCategory = login.login(prop.getProperty("Email"), prop.getProperty("Password"));	
+	 createEquipmentCategory = createSpaceCategory.createSpaceCat(prop.getProperty("EnterSName"));
+
+
+		
+}}
