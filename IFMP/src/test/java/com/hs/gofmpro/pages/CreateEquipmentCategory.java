@@ -56,19 +56,19 @@ public CreateEquipmentCategory(){
 		}
 		
 public CreateSpace createEquipmentCat(String EnterENa ) throws InterruptedException{
-		Thread.sleep(5000);
+		Thread.sleep(TestBase.SleepTimeMedium);
 		Iconclick.click();
-		Thread.sleep(5000);
+		Thread.sleep(TestBase.SleepTimeMedium);
 		Facility.click();
-		Thread.sleep(5000);
+		Thread.sleep(TestBase.SleepTimeMedium);
 		ClickPlus.click();
-		Thread.sleep(5000);
+		Thread.sleep(TestBase.SleepTimeMedium);
 		ClickEquipmentCat.click();
-		Thread.sleep(5000);
+		Thread.sleep(TestBase.SleepTimeMedium);
 		ClickCreate.click();
-		Thread.sleep(5000);
+		Thread.sleep(TestBase.SleepTimeMedium);
 		EnterEName.sendKeys(EnterENa);
-		Thread.sleep(5000);
+		Thread.sleep(TestBase.SleepTimeMedium);
 		PEqp.click();
 		List<WebElement> list1 = driver.findElements(By.xpath("//li[@id='ui-id-81']//a[contains(text(),'Electrical')]//a"));
 		System.out.println(list1.size());	
@@ -84,18 +84,18 @@ public CreateSpace createEquipmentCat(String EnterENa ) throws InterruptedExcept
 			}
 			
 		ClickSave.click();
-		Thread.sleep(5000);
+		Thread.sleep(TestBase.SleepTimeMedium);
 		return new CreateSpace();
 
 		}
 public CreateSpace DeleteEquipmentCat() throws InterruptedException{
-		Thread.sleep(5000);
+		Thread.sleep(TestBase.SleepTimeMedium);
 		ClickSideBar.click();
-		Thread.sleep(5000);
+		Thread.sleep(TestBase.SleepTimeMedium);
 		ClickDelete.click();
-		Thread.sleep(5000);
+		Thread.sleep(TestBase.SleepTimeMedium);
 		ClickOk.click();
-		Thread.sleep(5000);
+		Thread.sleep(TestBase.SleepTimeMedium);
 		EquipmentCategory.click();
 		return new CreateSpace();
 		}

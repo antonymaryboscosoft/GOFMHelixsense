@@ -58,17 +58,17 @@ Structure of the facility so I can associate the equipment and maintenance.*/
 			
 		public CreateEquipmentCategory createSpaceCat(String EnterSNa) throws InterruptedException{
 			
-			Thread.sleep(5000);
+			Thread.sleep(TestBase.SleepTimeMedium);
 			Iconclick.click();
-			Thread.sleep(5000);
+			Thread.sleep(TestBase.SleepTimeMedium);
 			Facility.click();
-			Thread.sleep(5000);
+			Thread.sleep(TestBase.SleepTimeMedium);
 			ClickPlus.click();
-			Thread.sleep(5000);
+			Thread.sleep(TestBase.SleepTimeMedium);
 			ClickSpaceCat.click();
-			Thread.sleep(5000);
+			Thread.sleep(TestBase.SleepTimeMedium);
 			ClickCreate.click();
-			Thread.sleep(5000);
+			Thread.sleep(TestBase.SleepTimeMedium);
 			/*
 			Util.Xls_Reader1 reader = new Util.Xls_Reader1("C:/Users/unit2a/Desktop/Newfolder/workspace/AppiumAndroid/src/Xlfile/Datadriven1.xlsx");
 			int rowCount = reader.getRowCount("GofmInput");
@@ -110,20 +110,20 @@ Structure of the facility so I can associate the equipment and maintenance.*/
 				System.out.println("Selected Storeowner is ====== "+innnerhtml);	
 				}
 			Save.click();
-			Thread.sleep(5000);
+			Thread.sleep(TestBase.SleepTimeMedium);
 			
 			return new CreateEquipmentCategory();
 
 			}
 			
 public CreateEquipmentCategory DeleteSpaceCat() throws InterruptedException{
-			Thread.sleep(5000);
+			Thread.sleep(TestBase.SleepTimeMedium);
 			ClickSideBar.click();
-			Thread.sleep(5000);
+			Thread.sleep(TestBase.SleepTimeMedium);
 			ClickDelete.click();
-			Thread.sleep(5000);
+			Thread.sleep(TestBase.SleepTimeMedium);
 			ClickOk.click();
-			Thread.sleep(5000);
+			Thread.sleep(TestBase.SleepTimeMedium);
 			SpaceCategory.click();
 			return new CreateEquipmentCategory();
 			}

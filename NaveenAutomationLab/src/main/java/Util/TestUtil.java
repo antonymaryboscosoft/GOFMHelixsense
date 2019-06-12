@@ -77,7 +77,7 @@ public class TestUtil extends TestBase{
 				+ "var jquery = document.createElement('script'); jquery.type = 'text/javascript';"
 				+ "jquery.src = 'https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js';"
 				+ "document.getElementsByTagName('head')[0].appendChild(jquery);" + "}");
-		Thread.sleep(5000);
+		Thread.sleep(TestBase.SleepTimeMedium);
 
 		// Use jQuery to add jquery-growl to the page
 		js.executeScript("$.getScript('https://the-internet.herokuapp.com/js/vendor/jquery.growl.js')");
@@ -85,7 +85,7 @@ public class TestUtil extends TestBase{
 		// Use jQuery to add jquery-growl styles to the page
 		js.executeScript("$('head').append('<link rel=\"stylesheet\" "
 				+ "href=\"https://the-internet.herokuapp.com/css/jquery.growl.css\" " + "type=\"text/css\" />');");
-		Thread.sleep(5000);
+		Thread.sleep(TestBase.SleepTimeMedium);
 
 		// jquery-growl w/ no frills
 		js.executeScript("$.growl({ title: 'GET', message: '/' });");
@@ -102,7 +102,7 @@ public class TestUtil extends TestBase{
 //		js.executeScript("$.growl.error({ title: 'ERROR', message: 'your error message goes here' });");
 //		js.executeScript("$.growl.notice({ title: 'Notice', message: 'your notice message goes here' });");
 //		js.executeScript("$.growl.warning({ title: 'Warning!', message: 'your warning message goes here' });");
-		Thread.sleep(5000);
+		Thread.sleep(TestBase.SleepTimeMedium);
 	}
 
 }

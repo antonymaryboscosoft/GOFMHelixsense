@@ -109,25 +109,25 @@ public CreateUser CreateCompany(String CmpNa, String Cd) throws InterruptedExcep
 	}
 	
 public CreateUser DeleteCompany() throws InterruptedException{
-        Thread.sleep(5000);
+        Thread.sleep(TestBase.SleepTimeMedium);
 		Iconclick.click();
 		JavascriptExecutor js1 = (JavascriptExecutor) driver;
         js1.executeScript("arguments[0].scrollIntoView();", Inventory);
-        Thread.sleep(5000);
+        Thread.sleep(TestBase.SleepTimeMedium);
         Inventory.click();
-        Thread.sleep(5000);
+        Thread.sleep(TestBase.SleepTimeMedium);
         ClickSymbol.click();
-        Thread.sleep(5000);
+        Thread.sleep(TestBase.SleepTimeMedium);
         ClickHelixsense.click();
-        Thread.sleep(5000);
+        Thread.sleep(TestBase.SleepTimeMedium);
         ClickPlus.click();
-        Thread.sleep(5000);
+        Thread.sleep(TestBase.SleepTimeMedium);
         ClickRules.click();
-        Thread.sleep(5000);
+        Thread.sleep(TestBase.SleepTimeMedium);
         ClickSymbol.click();
-        Thread.sleep(5000);
+        Thread.sleep(TestBase.SleepTimeMedium);
         ClickTCSCM.click();
-        Thread.sleep(5000);
+        Thread.sleep(TestBase.SleepTimeMedium);
         driver.findElement(By.xpath("//tr[1]//td[1]//div[1]//label[1]")).click();
         driver.findElement(By.xpath("//th[@class='o_list_record_selector']//label[@class='custom-control-label'][contains(text(),'​')]")).click();
         Select select = new Select(driver.findElement(By.xpath("//th[@class='o_list_record_selector']//label[@class='custom-control-label'][contains(text(),'​')]")));
@@ -137,19 +137,19 @@ public CreateUser DeleteCompany() throws InterruptedException{
         CheckBox.click();
         System.out.println(CheckBox.isSelected());*/
         //ClickAction.click();
-        Thread.sleep(5000);
+        Thread.sleep(TestBase.SleepTimeMedium);
         ClickDelete.click();
-        Thread.sleep(5000);
+        Thread.sleep(TestBase.SleepTimeMedium);
         ClickOk.click();
-        Thread.sleep(5000);
+        Thread.sleep(TestBase.SleepTimeMedium);
         ClickPlus.click();
-        Thread.sleep(5000);
+        Thread.sleep(TestBase.SleepTimeMedium);
         WareHouse.click();
-        Thread.sleep(5000);
+        Thread.sleep(TestBase.SleepTimeMedium);
         ClickAction1.click();
-        Thread.sleep(5000);
+        Thread.sleep(TestBase.SleepTimeMedium);
         ClickDelete.click();
-        Thread.sleep(5000);
+        Thread.sleep(TestBase.SleepTimeMedium);
         ClickOk.click();
         Thread.sleep(10000);
 		Iconclick.click();
